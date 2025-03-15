@@ -1,6 +1,4 @@
-/* .dot{
-  color: orangered;
-} */
+
 .pic{
   width: 90px;
   height: 90px;
@@ -62,16 +60,16 @@ h5{
   margin-left: 15%;
   place-items: center;
   grid-template-columns: 1fr 1fr;
-  height: 1450px;
-  width: 800px;
-  margin-bottom: 450px;
+  /* height: 1450px;
+  width: 800px; */
+  /* margin-bottom: 450px; */
 }
-.skillbox{
+/* .skillbox{
   height: 170px;
   width: 200px;
   font-size: 1.9rem;
   font-size: 2.1rem;
-}
+} */
 
 /* .skillpercent{
   width: 85px;

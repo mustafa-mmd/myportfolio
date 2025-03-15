@@ -39,8 +39,8 @@ transition:0.3s ease-in-out ;
  }
  @media  screen and (max-width:767px) {
 .butt{
-  height: 100px;
-  width: 260px;
-  
+  height: 30px;
+  width: 100px;
+  font-size: small;
 }
  }

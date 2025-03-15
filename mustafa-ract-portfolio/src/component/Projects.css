@@ -18,14 +18,14 @@ h1{
   .procont{
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
+    /* width: 800px; */
     gap: 20px;
     margin-bottom: 300px;
     padding-left: 10px;
     margin-left: 15%;
   }
   h1{
-    font-size: 3rem;
+    font-size: 1.2rem;
     /* text-align: center; */
     
   }
