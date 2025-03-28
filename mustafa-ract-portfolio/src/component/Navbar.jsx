@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
- import { Link } from 'react-scroll';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-
-import "./Navbar.css"
+import React, { useState } from "react";
+import { Link } from "react-scroll"; // ✅ Use react-scroll instead of NavLink
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,27 +12,53 @@ function Navbar() {
   };
 
   return (
-    <div className='nav'>
-      <nav className="navbar">
-        <h1 className='logo'>
-          <span className='m'>M</span> <span className='j'>j</span>.
-        </h1>
-        
-        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><Link to="nav" onClick={toggleNavbar}>Home</Link></li>
-          <li><Link to="about" smooth={true} offset={-94} duration={500} onClick={toggleNavbar}>About</Link></li>
-          <li><Link to="skillwraper" smooth={true} offset={-94} duration={500} onClick={toggleNavbar}>Skills</Link></li>
-          <li><Link to="servicecont" smooth={true} offset={-94} duration={500} onClick={toggleNavbar}>Services</Link></li>
-          <li><Link to="procont" smooth={true} offset={-138} duration={500} onClick={toggleNavbar}>Projects</Link></li>
-          <li><Link to="contact" smooth={true} offset={-94} duration={500} onClick={toggleNavbar}>Contacts</Link></li>
-          
-        </ul>
-        <div className="hamburger" onClick={toggleNavbar}>
-          {isOpen ? <CloseIcon style={{ fontSize: 50 }} /> : <MenuIcon style={{ fontSize: 50 }} />}
-        </div>
-      </nav>
-    </div>
-  );
- }
+    <nav className="navbar">
+      <h1 className="logo">MJ Creations</h1> 
 
-export default Navbar; 
+      {/*  Hamburger Menu */}
+      <div className="hamburger" onClick={toggleNavbar}>
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
+      </div>
+
+      {/*  Navigation Menu */}
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li>
+          <Link to="home" smooth={true} duration={500} offset={-94} onClick={toggleNavbar}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="about" smooth={true} duration={500} offset={-94} onClick={toggleNavbar}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="skillwraper" smooth={true} duration={500} offset={-94} onClick={toggleNavbar}>
+            Skills
+          </Link>
+        </li>
+        <li>
+          <Link to="servicecont" smooth={true} duration={500} offset={-94} onClick={toggleNavbar}>
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link to="procont" smooth={true} duration={500} offset={-138} onClick={toggleNavbar}>
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link to="contact" smooth={true} duration={500} offset={-94} onClick={toggleNavbar}>
+            Contact
+          </Link>
+        </li>
+      </ul>
+
+      {/*  Dark Overlay for Mobile Menu */}
+      {isOpen && <div className="overlay" onClick={toggleNavbar}></div>}
+    </nav>
+  );
+}
+
+export default Navbar;
+
